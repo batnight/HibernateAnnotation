@@ -10,7 +10,7 @@ import java.util.List;
  * Created by Mohammad on 06/12/2016.
  */
 @Entity
-@Table(name = "tbl_person")
+@Table(name = "tbl_persons")
 public class Person {
     @Id
     @GeneratedValue
@@ -19,8 +19,7 @@ public class Person {
     @Column(name = "full_name")
     private String fullName;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    @JoinColumn(table = "tbl_person_course", name = "ids")
+    @ManyToMany(cascade = {CascadeType.ALL, CascadeType.MERGE})
     private List<Course> courses = new ArrayList<Course>();
 
     public int getId() {
@@ -47,8 +46,9 @@ public class Person {
         this.courses = courses;
     }
 
-    public Person(String fullName) {
+    public Person(String fullName, List<Course> courses) {
         this.fullName = fullName;
+        this.courses = courses;
     }
 
     public Person() {

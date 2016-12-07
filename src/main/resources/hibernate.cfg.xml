@@ -25,6 +25,9 @@
         <mapping class="model.manytomany.Course"/>
         <mapping class="model.manytomany.Person"/>
 
+        <mapping class="model.manytoone.Book"/>
+        <mapping class="model.manytoone.Library"/>
+
     </session-factory>
 
 </hibernate-configuration>
