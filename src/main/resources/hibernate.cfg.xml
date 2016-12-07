@@ -14,11 +14,17 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.pool_size">1</property>
         <property name="hibernate.show_sql">true</property>
-        <mapping resource="City.hbm.xml"/>
-        <mapping resource="Country.hbm.xml"/>
-        <mapping resource="Person.hbm.xml"/>
-        <mapping resource="Question.hbm.xml"/>
-        <mapping resource="User.hbm.xml"/>
+
+
+        <mapping class="model.onetomany.Country"/>
+        <mapping class="model.onetomany.City"/>
+
+        <mapping class="model.onetoone.Phone"/>
+        <mapping class="model.onetoone.Person"/>
+
+        <mapping class="model.manytomany.Course"/>
+        <mapping class="model.manytomany.Person"/>
+
     </session-factory>
 
 </hibernate-configuration>
